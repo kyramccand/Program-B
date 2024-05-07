@@ -12,8 +12,8 @@ func main() {
 
 
 func testForLoop() {
-	fmt.Println("Testing for loops:")
-	for i := 0; i < 10; i++ {
+	fmt.Println("\nTesting for loops:")
+	for i := 1; i < 10; i++ {
 		for j := 0; j < i; j++ {
 			fmt.Print(j)
 		}
@@ -22,11 +22,11 @@ func testForLoop() {
 }
 
 func testWhileLoop(age int) {
-	fmt.Println("Testing while loops:")
+	fmt.Println("\nTesting while loops:")
 	i := 1;
-	for i < age {
-		fmt.Println("Are you ", i, "?")
+	for i < age { // while loops use for keyword
+		fmt.Printf("Are you %v? ", i) // printf
 		i++;
-	}	
-	
+	}
+	fmt.Printf("You're %v!!!\n", age)
 }
