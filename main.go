@@ -7,16 +7,18 @@ import (
 
 func main() {
 	fmt.Println("Welcome to Program B: A Demonstration of Go!") // there is fmt.Println, fmt.Print, and fmt.Printf
-	testForLoop() // testing functions/methods with all of these
+	// testing functions/methods and output with all of these
+	testForLoop() 
 	testWhileLoop()
 	testArray()
 	testMath()
 	testConditionals()
+	testInput()
+	fmt.Print("\nThank you for using my program.")
 }
 
-
 func testForLoop() {
-	fmt.Println("\nTesting for loops:")
+	fmt.Println("\nTesting for loops")
 	for i := 1; i < 10; i++ { // = operators are now :=
 		for j := 0; j < i; j++ {
 			fmt.Print(j)
@@ -26,7 +28,7 @@ func testForLoop() {
 }
 
 func testWhileLoop() {
-	fmt.Println("\nTesting while loops:")
+	fmt.Println("\nTesting while loops")
 	i := 1 // type is inferred
 	var age int = 10 // type is specified, = instead of :=
 	for i < age { // while loops use "for" keyword
@@ -37,7 +39,7 @@ func testWhileLoop() {
 }
 
 func testArray() {
-	fmt.Println("\nTesting arrays:") // arrays are printable in Go!
+	fmt.Println("\nTesting arrays") // arrays are printable
 	var dayArray = [...]string{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"} // length is inferred
 	monthArray := [12]string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"} // length is given
 	fmt.Println("Days of the week:", dayArray)
@@ -49,7 +51,7 @@ func testArray() {
 }
 
 func testMath() {
-	fmt.Println("\nTesting math operations:")
+	fmt.Println("\nTesting math operations")
 	a := 10 // Go is strict about unused variables
 	b := 5
 	fmt.Println(a, "+", b, "=", a+b)
@@ -71,7 +73,7 @@ func testMath() {
 }
 
 func testConditionals() {
-	fmt.Println("\nTesting conditionals:")
+	fmt.Println("\nTesting conditionals")
 	a := 0
 	b := 1
 	c := 5
@@ -90,5 +92,19 @@ func testConditionals() {
 	} else {
 		fmt.Println(a, "and", b, "are not equal to", c)
 	}
-	
+}
+
+func testInput() {
+	fmt.Println("\nTesting input")
+	fmt.Print("Enter your favorite number: ")
+	var favNum int;
+	fmt.Scan(&favNum) // &favNum is favNum's location in memory
+	fmt.Print("Enter your two least favorite numbers: ")
+	var badNum1 int // default value is 0
+	var badNum2 int
+	fmt.Scanf("%v %v", &badNum1, &badNum2) // separated by space
+	fmt.Print("Enter your favorite word: ")
+	var favWord string
+	fmt.Scan(&favWord)
+	fmt.Printf("Your favorite number is %v, your two least favorite numbers are %v and %v, and your favorite word is %v.\n", favNum, badNum1, badNum2, favWord) // printf works on multiple types of vars
 }
